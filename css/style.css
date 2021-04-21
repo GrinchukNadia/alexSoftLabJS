@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+    overflow-y: scroll;
+    background: #E4EBF5;
+}
+body{
+    font-family: 'Titillium Web', sans-serif;
+}
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: #E4EBF5;
+}
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-width: 640px;
+    max-width: 800px;
+    height: 10%;
+    border-radius: 6px;
+    background-color: #ffffff;
+    padding: 35px 22px;
+    box-shadow: 1px 1px 7px #c8d0e7, 
+                -1px -1px 7px #ffffff, 
+                0px 114px 0px -100px #ec5f69 inset;
+}
+.info{
+    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 3px;
+    font-weight: 100;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dce7eb3b;
+}
+.select_wrapper{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-family: 'Titillium Web', sans-serif;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dce7eb3b;
+}
+.select_wrapper select {
+        height: 50px;
+        width: 240px;
+        padding: 9px 9px 9px 9px;
+        font-size: 20px;
+        border: 1px solid #dce7eb;
+        background-color: transparent;
+}
+.select_wrapper select:focus{
+    outline: 2px solid #dce7eb;
+}
+.result{
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    width: fit-content;
+    align-self: center;
+    color: #c95f66;
+    border-bottom: 1px solid #ec5f69;
+    margin-bottom: 10px;
+}
+.list_name div{
+    padding-bottom: 6px;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+@media (max-width: 678px) {
+    .info{
+        font-size: 30px;
+    }
+    .container{
+        overflow: auto;
+        width: 100%;
+        min-width: unset;
+        max-width: unset;
+    }
+}
