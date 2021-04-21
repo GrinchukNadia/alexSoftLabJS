@@ -22,7 +22,7 @@ for(let one of arr) {
 }
 
 //Generating result of matches from JSON object
-fetch("../list.json")
+fetch("../js/list.json")
 .then(res => res.json())
 .then(data => {
     elementSelect.addEventListener('change', () => {
