@@ -21,23 +21,29 @@ for(let one of arr) {
     `
 }
 
+//the function which takes data from JSON and inserts the result in <select>
+const updateNames = (data) => {
+    let valueElementSelect = elementSelect.options[elementSelect.selectedIndex].text;
+        divWithResult.innerHTML = '';
+        
+    for(let dataItem of data) {
+        let nameItem = dataItem.name;
+        if(valueElementSelect === dataItem.name.slice(0, 1)) {
+            divWithResult.innerHTML += `<div class="name_item">${nameItem}</div>`
+        }
+    }
+    if(divWithResult.innerHTML == "") {
+        divWithResult.innerHTML = `No matches on letter ${valueElementSelect}`
+    }
+}
+    
 //Generating result of matches from JSON object
 fetch("https://grinchuknadia.github.io/alexSoftLabJS/js/list.json")
 .then(res => res.json())
 .then(data => {
+    updateNames(data)
     elementSelect.addEventListener('change', () => {
-        let valueElementSelect = elementSelect.options[elementSelect.selectedIndex].text;
-        divWithResult.innerHTML = '';
-
-        for(let dataItem of data) {
-            let nameItem = dataItem.name;
-            if(valueElementSelect === dataItem.name.slice(0, 1)) {
-                divWithResult.innerHTML += `<div class="name_item">${nameItem}</div>`
-            }
-        }
-        if(divWithResult.innerHTML == "") {
-            divWithResult.innerHTML = `No matches on letter ${valueElementSelect}`
-        }
+        updateNames(data)
     })
 }).catch(() => {
     divWithResult.innerHTML = `
